@@ -28,16 +28,16 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         LookingRight = true;
 
-        anim = GetComponent<Animator>();
+     
 
     }
 
     // Update is called once per frame
     private void FixedUpdate()
     {
-        if (Input.GetAxis("Horizontal") != 0)
+        
             transform.Translate(speed * Time.deltaTime, 0f, 0f);
-        lookingDirection();
+   
 
     }
 
@@ -56,15 +56,7 @@ public class Player : MonoBehaviour
 
         }
 
-        if (!isGrounded && !isGrounded_2)
-        {
-            anim.SetBool("jump", true);
-        }
-        else
-        {
 
-            anim.SetBool("jump", false);
-        }
 
         if (Input.GetAxis("Horizontal") != 0)
             if (LookingRight)
